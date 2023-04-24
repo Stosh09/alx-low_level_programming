@@ -1,8 +1,3 @@
-/*
- * File: 0-whatsmyname.c
- * Auth: Brennan D Baraban
- */
-
 #include <stdio.h>
 
 /**
