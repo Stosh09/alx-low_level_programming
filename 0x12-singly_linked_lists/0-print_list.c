@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
@@ -8,6 +7,8 @@
  * @h: a list to print elements of
  * Return: the number of nodes in list
  */
+
+
 size_t print_list(const list_t *h)
 {
     int i = 0, ret = 1;
@@ -33,6 +34,8 @@ size_t print_list(const list_t *h)
  * @str: string
  * Return: length of string
  */
+
+
 int _strlen(char *str)
 {
     int i;
