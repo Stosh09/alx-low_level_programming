@@ -7,12 +7,26 @@
   * Return: number of elements in h
   */
 
- 
+
+#include <stdlib.h>
+#include "lists.h"
+
+/**
+ * list_len - returns the number of elements in a linked list
+ * @h: pointer to the list_t list
+ *
+ * Return: number of elements in h
+ */
+
+
 size_t list_len(const list_t *h)
 {
-	if (h && h->next)
-		return (1 + list_len(h->next));
-	else if (h)
-		return (1);
-	return (0);
+ size_t n = 0;
+
+ while (h)
+ {
+ n++;
+ h = h->next;
+ }
+ return (n);
 }
