@@ -1,28 +1,54 @@
+
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * free_listint_safe - free safe a list
- * @h: linked lst
- *
- * Return: count of nodes
+ * free_listint_safe - Free a list that may or may not loop,
+ * set start of list to NULL
+ * @h: Pointer to pointer to the start of the list
+ * Return: Size of the list that has been freed
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t count = 0;
-	listint_t *tmp = NULL;
+	listint_t *killnode;
+	listint_t *current;
+	listadd_t *headadd;
+	listadd_t *checker;
+	size_t count;
 
-	while (*h != NULL)
+	count = 0;
+	current = *h;
+	headadd = NULL;
+	if (h != NULL)
 	{
-		count++;
-		tmp = *h;
-		*h = (*h)->next;
-		free(tmp);
-		if ((tmp->next) >= tmp)
+		while (current != NULL)
 		{
-			*h = NULL;
-			return (count);
+			checker = headadd;
+			while (checker != NULL)
+			{
+				if (current == checker->address)
+				{
+					free(current);
+					free_listadd(headadd);
+					/*headadd = NULL;*/
+					 *h = NULL;
+					return (count);
+				}
+				checker = checker->next;
+			}
+			killnode = current;
+			if (add_nodeaddress(&headadd, current) == NULL)
+			{
+				free_listadd(headadd);
+				exit(98);
+			}
+			current = current->next;
+			free(killnode);
+			count++;
 		}
+		free_listadd(headadd);
+		/*headadd = NULL;*/
+		*h = NULL;
 	}
-	*h = NULL;
 	return (count);
 }
