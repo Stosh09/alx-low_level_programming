@@ -1,9 +1,9 @@
 #include "stdio.h"
 #include "main.h"
 /*
-_puts_recursion prints string followed by new line
-On success return 1;
-On failure return error
+*_puts_recursion prints string followed by new line
+*On success return 1;
+*On failure return error
 */
 void _puts_recursion(char *s)
 {
