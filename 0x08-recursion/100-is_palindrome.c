@@ -50,6 +50,7 @@ return (palind3(a + 1, l - 2));
  */
 int is_palindrome(char *s)
 {
+
 int l;
 
 l = palind2(s, 0);
