@@ -1,7 +1,8 @@
 #include "stdio.h"
 #include "main.h"
 /*
-*_puts_recursion(char *s) - prints string followed by new line
+* _puts_recursion - Prints a string followed by a new line
+* @s: string
 *On success return 1;
 *On failure return error
 */
