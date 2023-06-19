@@ -3,4 +3,4 @@
 
 #define PI 3.14159265359
 
-#endif
+#endif /* _OBJECT_LIKE_MACRO_H */
