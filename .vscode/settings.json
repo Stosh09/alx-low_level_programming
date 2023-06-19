@@ -2,5 +2,6 @@
     "files.associations": {
         "main.h": "c",
         "stdio.h": "c"
-    }
+    },
+    "workbench.colorTheme": "Andromeda Italic"
 }
