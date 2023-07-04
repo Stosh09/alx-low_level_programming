@@ -2,7 +2,8 @@
 #include "lists.h"
 
 /**
- *listint_len-Returns number of elements in a list
+ *listint_len-Returns number of elements
+               in a list
  *@h: pointer to head of list_t list
  *
  * Return: Return the number of elements in listint_t
