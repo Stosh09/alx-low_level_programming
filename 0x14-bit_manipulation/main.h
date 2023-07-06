@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdlib.h>
 /**
  * file- main.h
  * header file for all function prorotypes used in project
