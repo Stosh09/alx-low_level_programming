@@ -29,5 +29,5 @@ int append_text_to_file(const char *filename, const char *text_content)
 
     close(o);
 
-    return (w);
+    return (1);
 }
