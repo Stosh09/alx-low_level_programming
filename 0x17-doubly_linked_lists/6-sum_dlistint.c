@@ -1,17 +1,16 @@
 #include "lists.h"
 
 /**
- * sum_dlistint - Sum all the data of a list
- * @head: Head of the list
+ * sum_dlistint - Sums all the data of a dlistint_t list.
+ * @head: The head of the dlistint_t list.
  *
- * Return the sum of all the data
+ * Return: The sum of all the data.
  */
-
 int sum_dlistint(dlistint_t *head)
 {
 	int sum = 0;
 
-	while (sum)
+	while (head)
 	{
 		sum += head->n;
 		head = head->next;
