@@ -1,0 +1,12 @@
+# Makefile that builds school executable
+
+# Variable
+cc=gcc
+SRC = school.c main.c
+
+# Rule to build our executable
+all: school
+
+# Compile in the event of change and link executable
+school: $(SRC) m.h
+	$(cc) -o school $(SRC)
