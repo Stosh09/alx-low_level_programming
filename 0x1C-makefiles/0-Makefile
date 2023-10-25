@@ -1,3 +1,8 @@
 # Create our first makefile
+
+# Rule that builds our executable
+all: school
+
+# Compile in event of any change in these files and link executable
 school: main.c school.c m.h
 	gcc -o school main.c school.c
