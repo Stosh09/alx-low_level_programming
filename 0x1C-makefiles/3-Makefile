@@ -1,0 +1,30 @@
+# Include delete rule in our Makefile
+
+# Variables
+CC = gcc
+NAME = school
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+RM = rm -f
+
+# Rule to build our executable
+add: $(NAME)
+
+# Compile in case of changes and link executable
+$(NAME): $(OBJ) m.h
+	$(CC) -o $(NAME) $(OBJ)
+
+# remove editor temp files and executables
+clean:
+	$(RM) *~ $(NAME)
+
+# Remove Object files
+oclean:
+	$(RM) $(OBJ)
+
+# Remove vim and emacs temp files, object and executable files
+fclean: clean oclean
+
+
+# force recompilation of all source code
+re: fclean all
