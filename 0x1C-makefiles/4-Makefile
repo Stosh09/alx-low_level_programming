@@ -1,0 +1,30 @@
+# Include the flags in our favorite compiler
+
+# variables
+CC = gcc
+NAME = school
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Rule to compile only updated source code
+add: $(NAME)
+
+# Compile only in case of change and link executable
+$(NAME): $(OBJ) m.h
+	$(CC) $(CFLAGS) $(NAME) $(OBJ)
+
+# Remove temp files and executables
+clean:
+	$(RM) *~ $(NAME)
+
+# Remove Object files
+oclean:
+	$(RM) $(OBJ)
+
+# remove emacs and vim temp files, object and executable files
+fclean: clean oclean
+
+# force recompilation of all source files
+re: fclean all
