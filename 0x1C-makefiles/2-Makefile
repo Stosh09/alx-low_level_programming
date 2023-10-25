@@ -1,0 +1,14 @@
+# Create our first useful makefile
+
+# Variables
+CC = gcc
+SRC = main.c school.c
+NAME = school
+OBJ = $(SRC:.c=.o)
+
+# Rule to build our executable
+all: $(NAME)
+
+# Compile whenever there are changes and link executable
+$(NAME): $(OBJ) m.h
+	$(CC) -o $(NAME) $(OBJ)
