@@ -1,0 +1,27 @@
+#Makefile for building 'school' executable
+
+# Variables
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+.PHONY: all clean oclean fclean re
+# Rule to compile all changed source code
+all: m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# remove the editor temp files and executables
+clean:
+	$(RM) *~ $(NAME)
+
+# remove the object files
+oclean:
+	$(RM) $(OBJ)
+
+# remove the Emacs & Vim temp files, object files & executable file
+fclean: clean oclean
+
+# forces recompilation of all source files
+re: fclean all
