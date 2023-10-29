@@ -1,20 +1,26 @@
-#Makefile for building 'school' executable
+# Makefile for building 'school' executable
 
 # Variables
 CC = gcc
-SRC = main.c holberton.c
+SRC = main.c school.c
+NAME = school
 OBJ = $(SRC:.c=.o)
-NAME = holberton
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean fclean re
-# Rule to compile all changed source code
-all: m.h $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+
+# Rule to build the executable
+all: $(NAME)
+
+# Compile and link the executable
+$(NAME): $(OBJ) m.h
+	$(CC) -o $(NAME) $(OBJ)
+
+# $@ and $^, which are the left and right sides of the :, respectively
 
 # remove the editor temp files and executables
 clean:
-	$(RM) *~ $(NAME)
+	-$(RM) $(NAME) *~
 
 # remove the object files
 oclean:
