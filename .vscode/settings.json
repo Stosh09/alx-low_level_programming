@@ -3,5 +3,6 @@
         "main.h": "c",
         "stdio.h": "c"
     },
-    "workbench.colorTheme": "Andromeda Italic"
+	"workbench.colorTheme": "Andromeda Italic",
+	"C_Cpp.errorSquiggles": "disabled"
 }
